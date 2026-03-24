@@ -38,14 +38,14 @@ public class CameraFollowing : MonoBehaviour
                 transform.RotateAround(playerObject.position, -Vector3.up, cameraSpeed * Time.deltaTime);
             }
         }
-        if(PM.canMove){
+        /*if(PM.canMove){
             if(PM.movingWay == 1){
                 transform.Translate(transform.forward * Time.deltaTime * PM.playerSpeed);
             }
             if(PM.movingWay == 2){
                 transform.Translate(-transform.forward * Time.deltaTime * PM.playerSpeed);
             }
-        }
+        }*/
     }
     private void MoveRPerformed(InputAction.CallbackContext obj)
     {
