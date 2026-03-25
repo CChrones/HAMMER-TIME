@@ -66,8 +66,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if(canHammer){
         hammerHitbox.SetActive(true);
-        RestHammerHitbox();
         canHammer = false;
+        RestHammerHitbox();
         }
     }
     private void MoveRPerformed(InputAction.CallbackContext obj)

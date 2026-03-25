@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - HammerHitbox
+  - Coin
+  - BigCoin
+  - Object
+  - Enemy
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -12,8 +17,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - HammerLayer
+  - CoinLayer
   - 
   - 
   - 

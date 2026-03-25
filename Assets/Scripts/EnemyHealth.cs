@@ -5,6 +5,10 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private int iFramesValue;
     private bool iFrames;
+    [SerializeField] private GameObject coin;
+    [SerializeField] private Vector3 transformOffset;
+    [SerializeField] private int gameObjectAmount;
+    [SerializeField] private bool killParent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,17 +19,29 @@ public class EnemyHealth : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider HammerHitbox)
+    private async Task OnTriggerEnter(Collider HammerHitbox)
     {
         if(iFrames == false)
         {
             health--;
-            IFrameActive();
+            await IFrameActive();
         }
     }
     private async Task IFrameActive()
     {
         iFrames = true;
+        if(health < 1)
+        {
+            for(int i = 0; i < gameObjectAmount; i++){
+            Instantiate(coin, new Vector3(transform.position.x + transformOffset.x, transform.position.y + transformOffset.y,
+                transform.position.z + transformOffset.z), Quaternion.identity);
+            }
+            if (killParent)
+            {
+                Destroy(transform.parent.gameObject);
+            }
+            Destroy(gameObject);
+        }
         await Task.Delay(iFramesValue);
         iFrames = false;
     }
