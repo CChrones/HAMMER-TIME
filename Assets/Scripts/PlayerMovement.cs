@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 public class PlayerMovement : MonoBehaviour
 {
     private InputAction moveR;
@@ -13,10 +14,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public float playerSpeed;
     [SerializeField] private Transform cameraTransform; 
     public bool canMove;
-    public int movingWay;
     [SerializeField] private GameObject hammerHitbox;
     private int movingWayCamera;
     [SerializeField] private float cameraSpeed;
+    private bool canHammer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,13 +40,10 @@ public class PlayerMovement : MonoBehaviour
         moveL.performed += MoveLPerformed;
         moveL.canceled += MoveLCanceled;
 
-        moveF.performed += MoveFPerformed;
-        moveF.canceled += MoveFCanceled;
-
-        moveB.performed += MoveBPerformed;
         smashHammer.performed += SmashHammer;
-        moveB.canceled += MoveBCanceled;
         canMove = true;
+        canHammer = true;
+        hammerHitbox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,31 +61,13 @@ public class PlayerMovement : MonoBehaviour
             cameraTransform.rotation = transform.rotation;
         }
     }
-    private void MoveFPerformed(InputAction.CallbackContext obj)
-    {
-        movingWay = 1;
-    }
-
-    private void MoveFCanceled(InputAction.CallbackContext obj)
-    {
-        if(movingWay == 1){
-        movingWay = 0;
-        }
-    }
+    
     private void SmashHammer(InputAction.CallbackContext obj)
     {
-        
-    }
-
-    private void MoveBPerformed(InputAction.CallbackContext obj)
-    {
-        movingWay = 2;
-    }
-
-    private void MoveBCanceled(InputAction.CallbackContext obj)
-    {
-        if(movingWay == 2){
-        movingWay = 0;
+        if(canHammer){
+        hammerHitbox.SetActive(true);
+        RestHammerHitbox();
+        canHammer = false;
         }
     }
     private void MoveRPerformed(InputAction.CallbackContext obj)
@@ -115,16 +95,18 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnDestroy()
     {
-        moveF.performed -= MoveFPerformed;
-        moveF.canceled -= MoveFCanceled;
-
-        moveB.performed -= MoveBPerformed;
-        moveB.canceled -= MoveBCanceled;
 
         moveL.performed -= MoveLPerformed;
         moveL.canceled -= MoveLCanceled;
 
         moveR.performed -= MoveRPerformed;
         moveR.canceled -= MoveRCanceled;
+    }
+    private async Task RestHammerHitbox()
+    {
+        await Task.Delay(100);
+        hammerHitbox.SetActive(false);
+        await Task.Delay(1000);
+        canHammer = true;
     }
 }

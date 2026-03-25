@@ -407,8 +407,7 @@ MonoBehaviour:
   playerSpeed: 10
   cameraTransform: {fileID: 162928092}
   canMove: 0
-  movingWay: 0
-  hammerHitbox: {fileID: 0}
+  hammerHitbox: {fileID: 740834756}
   cameraSpeed: 5
 --- !u!54 &489727735
 Rigidbody:
@@ -527,8 +526,70 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1044491102}
+  - {fileID: 740834757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &521434136
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 489727739}
+    m_Modifications:
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.737
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809655765797590892, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862979482733054725, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+      propertyPath: m_Name
+      value: HammerHitbox
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
 --- !u!1 &724140269
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +698,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &740834756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2862979482733054725, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+  m_PrefabInstance: {fileID: 521434136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &740834757 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 456739866030870498, guid: 1f07de826cb46eb4c81b31e63c358330, type: 3}
+  m_PrefabInstance: {fileID: 521434136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &863561700
 GameObject:
   m_ObjectHideFlags: 0
