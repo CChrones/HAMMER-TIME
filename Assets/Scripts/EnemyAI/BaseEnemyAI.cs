@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         BaseEnemyAI.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     movement for the basic enemy
+//****************************************************************************
 using UnityEngine;
 
 public class BaseEnemyAI : MonoBehaviour

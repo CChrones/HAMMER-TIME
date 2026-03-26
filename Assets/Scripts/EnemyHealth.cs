@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         EnemyHealth.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     enemy health system
+//****************************************************************************
 using UnityEngine;
 using System.Threading.Tasks;
 public class EnemyHealth : MonoBehaviour

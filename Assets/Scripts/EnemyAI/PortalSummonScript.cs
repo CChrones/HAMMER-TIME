@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         PortalSummonScript.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     abilities of the Portal enemy
+//****************************************************************************
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -5,16 +12,21 @@ public class PortalSummonScript : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemiesToSummon = new List<GameObject>();
     [SerializeField] private List<GameObject> enemiesSummoned = new List<GameObject>();
+    private bool canDoIt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    async Task Start()
+    void Start()
     {
-        await SummonFromPortal();
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
-    void Update()
+    async Task OnEnable()
     {
-        
+        //fixes issue of summoning before portals are spawned
+        if(canDoIt){
+        await SummonFromPortal(); 
+        }
+        canDoIt = true;
     }
     private async Task SummonFromPortal()
     {

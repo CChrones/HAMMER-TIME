@@ -1,19 +1,22 @@
 //****************************************************************************
-// File Name :         goToScene.cs
+// File Name :         EndDoor.cs
 // Author :            Cameron Chrones
 // Creation Date :     March 25th, 2026
 // Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
-//                     menu level buttons
+//                     door that serves as the end goal for the level
 //****************************************************************************
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class goToScene : MonoBehaviour
+public class EndDoor : MonoBehaviour
 {
+    [SerializeField] private FinalStrike FS;
     [SerializeField] private int sceneNumber;
     
-    // goes to scene
-    public void goToTheScene()
+    private void OnCollisionEnter(Collision triggerObject)
     {
-        SceneManager.LoadScene(sceneNumber); 
+        if (triggerObject.gameObject.CompareTag("Player") && FS.finalStrikeWon == true)
+        {
+            SceneManager.LoadScene(sceneNumber); 
+        }
     }
 }

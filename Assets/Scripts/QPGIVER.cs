@@ -1,19 +1,18 @@
 //****************************************************************************
-// File Name :         goToScene.cs
+// File Name :         QPGIVER.cs
 // Author :            Cameron Chrones
 // Creation Date :     March 25th, 2026
 // Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
-//                     menu level buttons
+//                     integer for the quest objectives
 //****************************************************************************
 using UnityEngine;
-using UnityEngine.SceneManagement;
-public class goToScene : MonoBehaviour
+
+public class QPGIVER : MonoBehaviour
 {
-    [SerializeField] private int sceneNumber;
-    
-    // goes to scene
-    public void goToTheScene()
+    [SerializeField] private QuestPoints QP;
+    private void OnDestroy()
     {
-        SceneManager.LoadScene(sceneNumber); 
+        Debug.Log("Destroyed");
+        QP.questPoints++;
     }
 }

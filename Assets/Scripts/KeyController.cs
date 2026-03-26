@@ -1,11 +1,18 @@
+//****************************************************************************
+// File Name :         KeyController.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     Key system for the player
+//****************************************************************************
 using UnityEngine;
 using TMPro;
 public class KeyController : MonoBehaviour
 {
     [SerializeField] private TMP_Text keyText;
     //[SerializeField] private AudioSource collectSound;
-    private int keyCount;
-    [SerializeField] private int keyRequirement;
+    public int keyCount;
+    public int keyRequirement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         PlayerMovement.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     movement for the player
+//****************************************************************************
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Threading.Tasks;
@@ -18,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private int movingWayCamera;
     [SerializeField] private float cameraSpeed;
     private bool canHammer;
+    [SerializeField] private PlayerHealth PH;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -66,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(canHammer){
         hammerHitbox.SetActive(true);
+        PH.iFrames = true;
         canHammer = false;
         RestHammerHitbox();
         }
@@ -106,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     {
         await Task.Delay(100);
         hammerHitbox.SetActive(false);
+        PH.iFrames = false;
         await Task.Delay(1000);
         canHammer = true;
     }

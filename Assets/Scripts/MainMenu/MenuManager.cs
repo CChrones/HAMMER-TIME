@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         MenuManager.cs
+// Author :            Cameron Chrones
+// Creation Date :     March 25th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     Menu System for the Main Menu
+//****************************************************************************
 using UnityEngine;
 using System.Collections.Generic;
 public class MenuManager : MonoBehaviour
