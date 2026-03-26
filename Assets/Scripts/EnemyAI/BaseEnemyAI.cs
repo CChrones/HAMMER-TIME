@@ -26,6 +26,7 @@ public class BaseEnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //tracks if player is within viewRange units of the enemy
         if(target.transform.position.x < transform.position.x + viewRange && target.transform.position.x > transform.position.x - viewRange 
             && target.transform.position.y < transform.position.y + viewRange && target.transform.position.y > transform.position.y - viewRange
                 && target.transform.position.z < transform.position.z + viewRange && target.transform.position.z > transform.position.z - viewRange)
@@ -35,7 +36,7 @@ public class BaseEnemyAI : MonoBehaviour
         {
             chasing = false;
         }
-
+//if not chasing, follows path. if chasing, doesnt follow path.
         if (chasing == false)
         {
             if(Vector3.Distance(transform.position, movePoints[currentIndex].transform.position) < 0.1f)

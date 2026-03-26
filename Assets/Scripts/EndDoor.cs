@@ -12,6 +12,7 @@ public class EndDoor : MonoBehaviour
     [SerializeField] private FinalStrike FS;
     [SerializeField] private int sceneNumber;
     
+    //Exit door usable when the Final Strike has been won
     private void OnCollisionEnter(Collision triggerObject)
     {
         if (triggerObject.gameObject.CompareTag("Player") && FS.finalStrikeWon == true)

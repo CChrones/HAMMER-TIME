@@ -12,7 +12,7 @@ public class FinalStrike : MonoBehaviour
     public bool finalStrikeWon;
     [SerializeField] private List<GameObject> enemiesToInitiate = new List<GameObject>();
     [SerializeField] private KeyController KC;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // set enemies inactive at the start
     void Start()
     {
         for(int i = 0; i < enemiesToInitiate.Count; i++)
@@ -21,6 +21,7 @@ public class FinalStrike : MonoBehaviour
         }
         finalStrikeWon = false;
     }
+    //automatically clean empty slots of list. when list is at 0, you've won the Final Strike.
     void Update()
     {
         enemiesToInitiate.RemoveAll(gameObject => gameObject == null);
@@ -30,6 +31,7 @@ public class FinalStrike : MonoBehaviour
             finalStrikeWon = true;
         }
     }
+    //Initiates final strike when you have all keys and you enter the correct area 
     private void OnTriggerEnter(Collider triggerObject)
     {
         if (triggerObject.gameObject.CompareTag("Player") && KC.keyCount >= KC.keyRequirement && finalStrikeWon == false)

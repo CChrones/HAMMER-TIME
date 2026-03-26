@@ -17,11 +17,12 @@ public class BigCoinBehavior : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody>();
+        //launches big coin up into the air with slightly random horizontal velocity
         rb.AddForce(UnityEngine.Random.Range(-1.0f, 1.0f), hoverSpeed, UnityEngine.Random.Range(-1.0f, 1.0f), ForceMode.Impulse); 
         await Dissipate();
     }
 
-    // Update is called once per frame
+    //disappears after 3 seconds
     private async Task Dissipate()
     {
         await Task.Delay(3000);

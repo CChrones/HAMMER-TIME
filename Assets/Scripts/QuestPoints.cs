@@ -15,6 +15,7 @@ public class QuestPoints : MonoBehaviour
     [SerializeField] private Vector3 transformOffset;
     [SerializeField] private int gameObjectAmount;
 
+//quest system
     void Update()
     {
         if(questPoints >= questPointsRequired)

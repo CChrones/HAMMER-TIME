@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         hammerHitbox.SetActive(false);
     }
 
-    // Update is called once per frame
+    // moving forward and backwards, rotating left and right (camera follows)
     void FixedUpdate()
     {
         if(canMove){
@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
+    //basic hammer attack
     private void SmashHammer(InputAction.CallbackContext obj)
     {
         if(canHammer){
@@ -111,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
         moveR.performed -= MoveRPerformed;
         moveR.canceled -= MoveRCanceled;
     }
+    //hammer cooldown and iframes on hammer
     private async Task RestHammerHitbox()
     {
         await Task.Delay(100);

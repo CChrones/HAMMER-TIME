@@ -34,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
             await IFrameActive();
         }
     }
+    //activate invincibility frames
     private async Task IFrameActive()
     {
         iFrames = true;

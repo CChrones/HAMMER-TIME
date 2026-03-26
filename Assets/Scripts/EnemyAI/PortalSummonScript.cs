@@ -32,7 +32,9 @@ public class PortalSummonScript : MonoBehaviour
     {
         for(int i = 0; i < enemiesToSummon.Count;)
         {
+            //cleans list of null entries
             CleanESList();
+            //summons enemies from enemiesToSummon list, cannot have more than 2 living enemies per portal
             if(enemiesSummoned.Count < 2)
             {
                 enemiesSummoned.Add(Instantiate(enemiesToSummon[i], new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity));

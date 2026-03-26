@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         iFrames = false;
         healthText.text = "Health: " + playerHP.ToString();
     }
+    //invincibility frames, sends you back on death.
     private async Task Hit()
     {
         iFrames = true;
