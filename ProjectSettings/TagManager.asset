@@ -19,8 +19,8 @@ TagManager:
   - UI
   - HammerLayer
   - CoinLayer
-  - 
-  - 
+  - DontTouchPlayerLayer
+  - PlayerLayer
   - 
   - 
   - 

@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         if (triggerObject.gameObject.CompareTag("Enemy")){
         if(iFrames == false)
         {
+            print("beenhit");
             playerHP--;
             await Hit();
         }
