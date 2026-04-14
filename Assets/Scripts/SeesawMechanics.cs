@@ -13,6 +13,16 @@ public class SeesawMechanics : MonoBehaviour
         seesawCooldown = false;
         isLeftDown = true;
     }
+    void Update()
+    {
+        if(seesawCooldown == true)
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+        } else
+        {
+            gameObject.GetComponent<Collider>().enabled = true;
+        }
+    }
     private void OnTriggerEnter(Collider HammerHitbox)
     {
         if (HammerHitbox.gameObject.CompareTag("HammerHitbox") && seesawCooldown == false)
@@ -22,13 +32,13 @@ public class SeesawMechanics : MonoBehaviour
             }
             if (isLeftDown)
             {
-                transform.eulerAngles = new Vector3(-10, 0, 0);
+                transform.eulerAngles = new Vector3(-10, transform.eulerAngles.y, transform.eulerAngles.z);
                 isLeftDown = false;
                 seesawCooldown = true;
                 SeesawOnCooldown();
             } else
             {
-                transform.eulerAngles = new Vector3(10, 0, 0);
+                transform.eulerAngles = new Vector3(10, transform.eulerAngles.y, transform.eulerAngles.z);
                 isLeftDown = true;
                 seesawCooldown = true;
                 SeesawOnCooldown();
