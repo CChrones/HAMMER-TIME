@@ -11,10 +11,12 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> Menu1 = new List<GameObject>();
     [SerializeField] private List<GameObject> Menu2 = new List<GameObject>();
+    [SerializeField] private List<GameObject> ShopMenu = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         exitAllListItems(Menu2);
+        exitAllListItems(ShopMenu);
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class MenuManager : MonoBehaviour
     {
         for(int i = 0; i < List.Count; i++)
         {
+            List.RemoveAll(gameObject => gameObject == null);
             List[i].SetActive(false);
         }
     }
@@ -34,17 +37,24 @@ public class MenuManager : MonoBehaviour
     {
         for(int i = 0; i < List.Count; i++)
         {
+            List.RemoveAll(gameObject => gameObject == null);
             List[i].SetActive(true);
         }
     }
     public void enterMenu2()
     {
         exitAllListItems(Menu1);
+        exitAllListItems(ShopMenu);
         enterAllListItems(Menu2);
     }
     public void enterMenu1()
     {
         exitAllListItems(Menu2);
         enterAllListItems(Menu1);
+    }
+    public void enterShopMenu()
+    {
+        exitAllListItems(Menu2);
+        enterAllListItems(ShopMenu);
     }
 }

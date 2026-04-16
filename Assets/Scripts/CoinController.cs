@@ -13,12 +13,10 @@ public class CoinController : MonoBehaviour
     [SerializeField] private TMP_Text coinText;
     //[SerializeField] private AudioSource collectSound;
     //[SerializeField] private AudioSource miscCollectSound;
-    private int coinCount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        coinCount = 0;
-        coinText.text = "Bits: " + coinCount.ToString();
+        coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
     }
 
     // Update is called once per frame
@@ -35,20 +33,20 @@ public class CoinController : MonoBehaviour
     {
         if (triggerObject.gameObject.CompareTag("Coin") && !gameObject.CompareTag("HammerHitbox"))
         {
-            coinCount++;
+            BitsCurrencyStorer.coinCount++;
             /*if(collectSound != null){
                 collectSound.Play();
             }*/
-            coinText.text = "Bits: " + coinCount.ToString();
+            coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }
         if (triggerObject.gameObject.CompareTag("BigCoin") && !gameObject.CompareTag("HammerHitbox"))
         {
-            coinCount += 4;
+            BitsCurrencyStorer.coinCount += 4;
             /*if(collectSound != null){
                 collectSound.Play();
             }*/
-            coinText.text = "Bits: " + coinCount.ToString();
+            coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }
         if (triggerObject.gameObject.CompareTag("MiscCollectible") && !gameObject.CompareTag("HammerHitbox"))
