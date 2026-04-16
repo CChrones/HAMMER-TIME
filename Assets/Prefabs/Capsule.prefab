@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: 3
+  playerMaxHP: 3
   iFramesValue: 1000
   iFrames: 0
   healthText: {fileID: 0}

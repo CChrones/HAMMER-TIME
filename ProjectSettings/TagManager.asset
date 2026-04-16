@@ -12,6 +12,7 @@ TagManager:
   - Key
   - MiscCollectible
   - HammerProjHitbox
+  - HealthOrb
   layers:
   - Default
   - TransparentFX

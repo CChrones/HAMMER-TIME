@@ -11,7 +11,9 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
+    //[SerializeField] private AudioSource collectSound;
     [SerializeField] private int playerHP;
+    [SerializeField] private int playerMaxHP;
     [SerializeField] private int iFramesValue;
     public bool iFrames;
     [SerializeField] private TMP_Text healthText;
@@ -43,6 +45,19 @@ public class PlayerHealth : MonoBehaviour
             playerHP--;
             await Hit();
         }
+        }
+    }
+    private async Task OnTriggerEnter(Collider triggerObject)
+    {
+        if (triggerObject.gameObject.CompareTag("HealthOrb")){
+            if(playerHP < playerMaxHP){
+            playerHP++;
+            healthText.text = "Health: " + playerHP.ToString();
+            /*if(collectSound != null){
+                collectSound.Play();
+            }*/
+            Destroy(triggerObject.gameObject);
+            }
         }
     }
 
