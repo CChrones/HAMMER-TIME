@@ -5,7 +5,7 @@ public class SeesawMechanics : MonoBehaviour
     private bool isTouchingPlayer;
     [SerializeField] private Rigidbody target; 
     [SerializeField] private float boostVelocity;
-    private bool isLeftDown;
+    public bool isLeftDown;
     private bool seesawCooldown;
     void Start()
     {
