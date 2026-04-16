@@ -28,10 +28,19 @@ public class EnemyHealth : MonoBehaviour
     }
     private async Task OnTriggerEnter(Collider HammerHitbox)
     {
-        if(iFrames == false)
-        {
+        if (HammerHitbox.gameObject.CompareTag("HammerHitbox")){
+            if(iFrames == false)
+            {
+            health -= 3;
+            await IFrameActive();
+            }
+        }
+        if (HammerHitbox.gameObject.CompareTag("HammerProjHitbox")){
+            if(iFrames == false)
+            {
             health--;
             await IFrameActive();
+            }
         }
     }
     //activate invincibility frames

@@ -270,6 +270,7 @@ MonoBehaviour:
   canMove: 0
   hammerHitbox: {fileID: 6897963008630315269}
   spinHammerHitbox: {fileID: 3153588847878848289}
+  hammerProjectile: {fileID: 7111613410153602576, guid: a9eac3771c2a2b447974d72d54d26b4a, type: 3}
   cameraSpeed: 5
   PH: {fileID: 5837924630364782382}
   glideValue: 0.15

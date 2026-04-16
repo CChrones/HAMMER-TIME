@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canMove;
     [SerializeField] private GameObject hammerHitbox;
     [SerializeField] private GameObject spinHammerHitbox;
+    [SerializeField] private GameObject hammerProjectile;
     private int movingWayCamera;
     [SerializeField] private float cameraSpeed;
     private bool canHammer;
@@ -100,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
         PH.iFrames = true;
         canHammer = false;
         RestHammerHitbox();
+        SummonHammerProjectile();
         }
     }
     private void SpinHammerPerformed(InputAction.CallbackContext obj)
@@ -161,6 +163,13 @@ public class PlayerMovement : MonoBehaviour
         PH.iFrames = false;
         await Task.Delay(1000);
         canHammer = true;
+    }
+    private async Task SummonHammerProjectile()
+    {
+        await Task.Delay(100);
+        if(AbilitiesUnlocked.hasHammerProjectile == true){
+            GameObject summonedObj = Instantiate(hammerProjectile, transform.position, transform.rotation);
+        }
     }
     
 }
