@@ -11,7 +11,7 @@ using TMPro;
 public class CoinController : MonoBehaviour
 {
     [SerializeField] private TMP_Text coinText;
-    //[SerializeField] private AudioSource collectSound;
+    [SerializeField] private AudioSource collectSound;
     //[SerializeField] private AudioSource miscCollectSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,18 +34,18 @@ public class CoinController : MonoBehaviour
         if (triggerObject.gameObject.CompareTag("Coin") && !gameObject.CompareTag("HammerHitbox"))
         {
             BitsCurrencyStorer.coinCount++;
-            /*if(collectSound != null){
+            if(collectSound != null){
                 collectSound.Play();
-            }*/
+            }
             coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }
         if (triggerObject.gameObject.CompareTag("BigCoin") && !gameObject.CompareTag("HammerHitbox"))
         {
             BitsCurrencyStorer.coinCount += 4;
-            /*if(collectSound != null){
+            if(collectSound != null){
                 collectSound.Play();
-            }*/
+            }
             coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }

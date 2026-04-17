@@ -27,13 +27,12 @@ public class PlayerHealth : MonoBehaviour
     private async Task Hit()
     {
         iFrames = true;
-
+        healthText.text = "Health: " + playerHP.ToString();
         if(playerHP < 1)
         {
-            SceneManager.LoadScene(0); 
+            SceneManager.LoadScene(6); 
         }
         await Task.Delay(iFramesValue);
-        healthText.text = "Health: " + playerHP.ToString();
         iFrames = false;
     }
     private async Task OnCollisionEnter(Collision triggerObject)
@@ -47,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
         }
         }
     }
-    private async Task OnTriggerEnter(Collider triggerObject)
+    private void OnTriggerEnter(Collider triggerObject)
     {
         if (triggerObject.gameObject.CompareTag("HealthOrb")){
             if(playerHP < playerMaxHP){

@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         SniperEnemyAI.cs
+// Author :            Cameron Chrones
+// Creation Date :     April 16th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     Sniper enemy type (that currently goes unused)
+//****************************************************************************
 using UnityEngine;
 
 public class SniperEnemyAI : MonoBehaviour

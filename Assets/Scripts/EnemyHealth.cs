@@ -9,7 +9,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] private int health;
+    [SerializeField] public int health;
     [SerializeField] private int iFramesValue;
     private bool iFrames;
     [SerializeField] private GameObject coin;
@@ -38,13 +38,14 @@ public class EnemyHealth : MonoBehaviour
         if (HammerHitbox.gameObject.CompareTag("HammerProjHitbox")){
             if(iFrames == false)
             {
-            health--;
+            print("hitwithProjectile");
+            health -= 1;
             await IFrameActive();
             }
         }
     }
     //activate invincibility frames
-    private async Task IFrameActive()
+    public async Task IFrameActive()
     {
         iFrames = true;
         if(health < 1)

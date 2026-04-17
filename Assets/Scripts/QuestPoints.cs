@@ -18,6 +18,7 @@ public class QuestPoints : MonoBehaviour
 //quest system
     void Update()
     {
+        //if you have enough quest points, summon thing.
         if(questPoints >= questPointsRequired)
         {
             questPoints = 0;

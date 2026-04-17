@@ -13,6 +13,8 @@ TagManager:
   - MiscCollectible
   - HammerProjHitbox
   - HealthOrb
+  - RockMovePoint
+  - BossFace
   layers:
   - Default
   - TransparentFX

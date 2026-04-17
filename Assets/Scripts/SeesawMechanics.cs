@@ -1,3 +1,10 @@
+//****************************************************************************
+// File Name :         SeesawMechanics.cs
+// Author :            Cameron Chrones
+// Creation Date :     April 16th, 2026
+// Brief Description : This file is 3D Platformer Alpha for IM 160, coding the
+//                     Seesaws found in lvls 1 and 2
+//****************************************************************************
 using UnityEngine;
 using System.Threading.Tasks;
 public class SeesawMechanics : MonoBehaviour
@@ -23,8 +30,9 @@ public class SeesawMechanics : MonoBehaviour
             gameObject.GetComponent<Collider>().enabled = true;
         }
     }
-    private void OnTriggerEnter(Collider HammerHitbox)
+    private async Task OnTriggerEnter(Collider HammerHitbox)
     {
+        //switches state of seesaw if hit by hammer, launches you if you're in contact with it.
         if (HammerHitbox.gameObject.CompareTag("HammerHitbox") && seesawCooldown == false)
         {
             if(isTouchingPlayer == true){
@@ -35,13 +43,13 @@ public class SeesawMechanics : MonoBehaviour
                 transform.eulerAngles = new Vector3(-10, transform.eulerAngles.y, transform.eulerAngles.z);
                 isLeftDown = false;
                 seesawCooldown = true;
-                SeesawOnCooldown();
+                await SeesawOnCooldown();
             } else
             {
                 transform.eulerAngles = new Vector3(10, transform.eulerAngles.y, transform.eulerAngles.z);
                 isLeftDown = true;
                 seesawCooldown = true;
-                SeesawOnCooldown();
+                await SeesawOnCooldown();
             }
 
         }
@@ -58,6 +66,7 @@ public class SeesawMechanics : MonoBehaviour
             isTouchingPlayer = false;
         }
     }
+    //seesaw cooldown
     private async Task SeesawOnCooldown()
     {
         await Task.Delay(100);

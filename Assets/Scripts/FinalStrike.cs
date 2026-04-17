@@ -25,7 +25,6 @@ public class FinalStrike : MonoBehaviour
     void Update()
     {
         enemiesToInitiate.RemoveAll(gameObject => gameObject == null);
-        Debug.Log("List cleaned. New count: " + enemiesToInitiate.Count);
         if(enemiesToInitiate.Count == 0)
         {
             finalStrikeWon = true;
