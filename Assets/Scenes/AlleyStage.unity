@@ -3515,6 +3515,9 @@ MonoBehaviour:
   questReward: {fileID: 4183390233088201155, guid: 8fccb7e5dc139e448b8c1ef52f7c27ac, type: 3}
   transformOffset: {x: 1, y: 0, z: 0}
   gameObjectAmount: 1
+  questText: {fileID: 1399164364}
+  QT1: Collect my
+  QT2: missing cat\n   plushes!!!!\n   or i will Beat you Up!!!
 --- !u!136 &1318468495
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3603,7 +3606,8 @@ Transform:
   m_LocalPosition: {x: 7.766034, y: 1.49, z: -22.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1399164366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1351343739
@@ -3839,16 +3843,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399164363}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -23.36}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.45000076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1318468498}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.83, y: 2.04}
+  m_AnchoredPosition: {x: -3.9360342, y: 0.54999995}
   m_SizeDelta: {x: 7.6023, y: 2.1539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1411701243 stripped
@@ -5174,6 +5178,9 @@ MonoBehaviour:
   questReward: {fileID: 4183390233088201155, guid: 8fccb7e5dc139e448b8c1ef52f7c27ac, type: 3}
   transformOffset: {x: 1, y: 0, z: 0}
   gameObjectAmount: 1
+  questText: {fileID: 0}
+  QT1: 
+  QT2: 
 --- !u!136 &1662831498
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7378,7 +7385,6 @@ SceneRoots:
   - {fileID: 397321610}
   - {fileID: 1068845217}
   - {fileID: 1318468498}
-  - {fileID: 1399164366}
   - {fileID: 1160049258}
   - {fileID: 1910670351}
   - {fileID: 2046028835}
