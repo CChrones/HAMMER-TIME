@@ -35,7 +35,7 @@ public class BossAI : MonoBehaviour
         //stops ticking if boss dies or if time is 0
         if(timer > 0 && gameObject != null){
         timer--;
-        timeText.text = "TIME UNTIL DOOM: " + timer;
+        timeText.text = timer.ToString();
         await StartTimer();
         } else {
             if(timer <= 0){
