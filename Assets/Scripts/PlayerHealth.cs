@@ -21,13 +21,13 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         iFrames = false;
-        healthText.text = "Health: " + playerHP.ToString();
+        healthText.text = playerHP.ToString() + "/" + playerMaxHP.ToString();
     }
     //invincibility frames, sends you back on death.
     private async Task Hit()
     {
         iFrames = true;
-        healthText.text = "Health: " + playerHP.ToString();
+        healthText.text = playerHP.ToString() + "/" + playerMaxHP.ToString();
         if(playerHP < 1)
         {
             SceneManager.LoadScene(6); 
@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         if (triggerObject.gameObject.CompareTag("HealthOrb")){
             if(playerHP < playerMaxHP){
             playerHP++;
-            healthText.text = "Health: " + playerHP.ToString();
+            healthText.text = playerHP.ToString() + "/" + playerMaxHP.ToString();
             /*if(collectSound != null){
                 collectSound.Play();
             }*/

@@ -16,7 +16,7 @@ public class CoinController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
+        coinText.text = BitsCurrencyStorer.coinCount.ToString();
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class CoinController : MonoBehaviour
             if(collectSound != null){
                 collectSound.Play();
             }
-            coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
+            coinText.text = BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }
         if (triggerObject.gameObject.CompareTag("BigCoin") && !gameObject.CompareTag("HammerHitbox"))
@@ -46,7 +46,7 @@ public class CoinController : MonoBehaviour
             if(collectSound != null){
                 collectSound.Play();
             }
-            coinText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
+            coinText.text = BitsCurrencyStorer.coinCount.ToString();
             Destroy(triggerObject.gameObject);
         }
         if (triggerObject.gameObject.CompareTag("MiscCollectible") && !gameObject.CompareTag("HammerHitbox"))

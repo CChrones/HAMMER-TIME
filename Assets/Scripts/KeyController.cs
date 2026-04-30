@@ -17,7 +17,7 @@ public class KeyController : MonoBehaviour
     void Start()
     {
         keyCount = 0;
-        keyText.text = "Keys: " + keyCount.ToString() + "/" + keyRequirement.ToString();
+        keyText.text = keyCount.ToString() + "/" + keyRequirement.ToString();
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class KeyController : MonoBehaviour
             /*if(collectSound != null){
                 collectSound.Play();
             }*/
-            keyText.text = "Keys: " + keyCount.ToString();
+            keyText.text = keyCount.ToString() + "/" + keyRequirement.ToString();
             Destroy(triggerObject.gameObject);
         }
     }
