@@ -15,6 +15,7 @@ TagManager:
   - HealthOrb
   - RockMovePoint
   - BossFace
+  - Killbox
   layers:
   - Default
   - TransparentFX

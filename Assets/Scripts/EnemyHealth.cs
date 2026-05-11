@@ -16,6 +16,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private Vector3 transformOffset;
     [SerializeField] private int gameObjectAmount;
     [SerializeField] private bool killParent;
+    [SerializeField] private AudioSource killSfx;
+    [SerializeField] private AudioSource hitSfx;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +34,9 @@ public class EnemyHealth : MonoBehaviour
             if(iFrames == false)
             {
             health -= 3;
+            if(hitSfx != null){
+                hitSfx.Play();
+            }
             await IFrameActive();
             }
         }
@@ -40,6 +45,9 @@ public class EnemyHealth : MonoBehaviour
             {
             print("hitwithProjectile");
             health -= 1;
+            if(hitSfx != null){
+                hitSfx.Play();
+            }
             await IFrameActive();
             }
         }
@@ -53,6 +61,9 @@ public class EnemyHealth : MonoBehaviour
             for(int i = 0; i < gameObjectAmount; i++){
             Instantiate(coin, new Vector3(transform.position.x + transformOffset.x, transform.position.y + transformOffset.y,
                 transform.position.z + transformOffset.z), Quaternion.identity);
+            }
+            if(killSfx != null){
+                killSfx.Play();
             }
             if (killParent)
             {

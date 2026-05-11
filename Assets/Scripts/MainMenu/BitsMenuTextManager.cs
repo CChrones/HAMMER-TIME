@@ -19,6 +19,6 @@ public class BitsMenuTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bitsText.text = "Bits: " + BitsCurrencyStorer.coinCount.ToString();
+        bitsText.text = BitsCurrencyStorer.coinCount.ToString();
     }
 }

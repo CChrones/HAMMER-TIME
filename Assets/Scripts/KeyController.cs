@@ -10,7 +10,7 @@ using TMPro;
 public class KeyController : MonoBehaviour
 {
     [SerializeField] private TMP_Text keyText;
-    //[SerializeField] private AudioSource collectSound;
+    [SerializeField] private AudioSource collectSound;
     public int keyCount;
     public int keyRequirement;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,9 +35,9 @@ public class KeyController : MonoBehaviour
         if (triggerObject.gameObject.CompareTag("Key"))
         {
             keyCount++;
-            /*if(collectSound != null){
+            if(collectSound != null){
                 collectSound.Play();
-            }*/
+            }
             keyText.text = keyCount.ToString() + "/" + keyRequirement.ToString();
             Destroy(triggerObject.gameObject);
         }

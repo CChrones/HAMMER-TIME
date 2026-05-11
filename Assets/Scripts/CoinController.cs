@@ -12,7 +12,7 @@ public class CoinController : MonoBehaviour
 {
     [SerializeField] private TMP_Text coinText;
     [SerializeField] private AudioSource collectSound;
-    //[SerializeField] private AudioSource miscCollectSound;
+    [SerializeField] private AudioSource miscCollectSound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,9 +51,9 @@ public class CoinController : MonoBehaviour
         }
         if (triggerObject.gameObject.CompareTag("MiscCollectible") && !gameObject.CompareTag("HammerHitbox"))
         {
-            /*if(miscCollectSound != null){
+            if(miscCollectSound != null){
                 miscCollectSound.Play();
-            }*/
+            }
             Destroy(triggerObject.gameObject);
         }
     }

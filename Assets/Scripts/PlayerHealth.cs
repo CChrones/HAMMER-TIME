@@ -45,6 +45,9 @@ public class PlayerHealth : MonoBehaviour
             await Hit();
         }
         }
+        if (triggerObject.gameObject.CompareTag("Killbox")){
+            SceneManager.LoadScene(6);
+        }
     }
     private void OnTriggerEnter(Collider triggerObject)
     {

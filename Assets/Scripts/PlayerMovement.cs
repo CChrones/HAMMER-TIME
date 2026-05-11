@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject hammerHitbox;
     [SerializeField] private GameObject spinHammerHitbox;
     [SerializeField] private GameObject hammerProjectile;
+    [SerializeField] private GameObject baseHammer;
     private int movingWayCamera;
     [SerializeField] private float cameraSpeed;
     private bool canHammer;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         canHammer = true;
         hammerHitbox.SetActive(false);
         spinHammerHitbox.SetActive(false);
+        baseHammer.SetActive(true);
 
         isGliding = false;
     }
@@ -98,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(canHammer){
         hammerHitbox.SetActive(true);
+        baseHammer.SetActive(false);
         PH.iFrames = true;
         canHammer = false;
         RestHammerHitbox();
@@ -108,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(canHammer && AbilitiesUnlocked.hasHammerSpin){
         spinHammerHitbox.SetActive(true);
+        baseHammer.SetActive(false);
         canHammer = false;
         isGliding = true;
         }
@@ -157,9 +161,10 @@ public class PlayerMovement : MonoBehaviour
     //hammer cooldown and iframes on hammer
     private async Task RestHammerHitbox()
     {
-        await Task.Delay(100);
+        await Task.Delay(200);
         hammerHitbox.SetActive(false);
         spinHammerHitbox.SetActive(false);
+        baseHammer.SetActive(true);
         PH.iFrames = false;
         await Task.Delay(1000);
         canHammer = true;
